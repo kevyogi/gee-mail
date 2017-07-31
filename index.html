@@ -6,11 +6,46 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
+
+        var sideWindow = document.createElement("div");
+        sideWindow.id = "side";
+        theBody.appendChild(sideWindow);
+
+
+    for(var i = 0; i<10; i++){
+    	var divBlock = document.createElement("div");
+    	divBlock.className = "mainBlock";
+    	theBody.appendChild(divBlock);
+
+    	var br = document.createElement("br");
+    	theBody.appendChild(br);
+
+  		var senderDiv = document.createElement("div");
+  		senderDiv.className = "theSender";
+  		divBlock.appendChild(senderDiv);
+  		senderDiv.innerHTML = window.geemails[i].sender;
+
+  		var subjectDiv = document.createElement("div");
+  		subjectDiv.className = "theSubject";
+  		senderDiv.appendChild(subjectDiv);
+  		subjectDiv.innerHTML = window.geemails[i].subject;
+
+  		var messDiv = document.createElement("div");
+  		messDiv.className = "theMessage";
+  		senderDiv.appendChild(messDiv);
+  		messDiv.innerHTML = window.geemails[i].body;
+}
+
+
       };
+
+
+
+
+
     </script>
 	</head>
-	<body>
+	<body id="theBody">
 		<div class="container" id="main">
 			Build Me!
 		</div>
