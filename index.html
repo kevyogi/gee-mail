@@ -6,26 +6,49 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        // console.log(window.geemails.length);
+    var header = document.createElement("h1");
+    header.id = "theHead";
+    header.innerHTML = "Gee Mail";
+    theBody.appendChild(header);
+
     var test = document.getElementsByClassName("mainBlock");
     
 
     var sideWindow = document.createElement("div");
         sideWindow.id = "side";
         theBody.appendChild(sideWindow);
+        
+        // var menu = document.createElement("ul");
+        // menu.id = "theMenu";
+        // sideWindow.appendChild(menu);
 
-    var emailCount = document.createElement("div");
+        var emailCount = document.createElement("li");
     	emailCount.id = "theCount";
     	var counter = window.geemails.length;
-    	emailCount.innerHTML = "Messages: " + counter;
+    	emailCount.innerHTML = "Inbox " + "(" + counter + ")";
     	sideWindow.appendChild(emailCount);
+        
+        var menuItems = ["Starred", "Important", "Sent Mail", "Drafts", "Spam"];
+        for(var y = 0; y < menuItems.length; y++){
+        	var theList = document.createElement("li");
+        	theList.className = "list";
+        	theList.innerHTML = menuItems[y] + " (0)";
+        	sideWindow.appendChild(theList);
+        }
+
+
+
+
+    
 
     var inbox = document.createElement("div");
+    inbox.id = "theInbox";
     theBody.appendChild(inbox);
     
     // setInterval(addEmail, 5000);
     var finalBr = document.createElement("br");
     inbox.appendChild(finalBr);
+    
     function addEmail(){
     	var myVar = window.getNewMessage();
 
@@ -57,7 +80,6 @@
     	newDivBlock.appendChild(newMessDiv);
 
     	var newerBreak = document.createElement("br");
-    	// inbox.appendChild(newerBreak);
 
     	for(var j = 0; j < test.length; j++){
   		document.getElementsByClassName("mainBlock")[j].addEventListener("click", showEmail);
@@ -67,7 +89,7 @@
 		inbox.insertBefore(newerBreak, inbox.childNodes[0]);
 
   		counter = counter + 1;
-    	emailCount.innerHTML = "Messages: " + counter;
+    	emailCount.innerHTML = "Inbox " + "(" + counter + ")";
 
 	}
 	
@@ -138,7 +160,7 @@
 	</head>
 	<body id="theBody">
 		<div class="container" id="main">
-			Build Me!
+			
 		</div>
 	</body>
 </html>

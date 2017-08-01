@@ -1,5 +1,17 @@
-#side{
+#theHead{
+	text-align: center;
+}
 
+#side{
+	margin-right: 1136px;
+	margin-left: 15px;
+
+
+}
+
+#theInbox{
+	margin-left: 175px;
+	margin-top: -125px;
 }
 
 #theCount{
@@ -8,18 +20,27 @@
 
 .mainBlock{
 	border: 2px solid black;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 5px;
+	padding-left: 5px;
+	 
 
 }
 
 .theDate{
+	text-align: right;
+	float: right;
 
 }
 
 .theSender{
+	float: left;
 
 }
 
 .theSubject{
+	text-align: center;
 
 }
 
