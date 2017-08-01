@@ -7,6 +7,7 @@
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
         // console.log(window.geemails.length);
+    var test = document.getElementsByClassName("mainBlock");
 
 
     var sideWindow = document.createElement("div");
@@ -15,9 +16,17 @@
 
     var emailCount = document.createElement("div");
     	emailCount.id = "theCount";
-    	emailCount.innerHTML = "Messages: " + document.getElementsByClassName("mainBlock").length;
+    	var counter = window.geemails.length;
+    	emailCount.innerHTML = "Messages: " + counter;
     	sideWindow.appendChild(emailCount);
 
+	// setInterval(theCounter, 10000);    
+
+ //    function theCounter(){
+ //    	counter = counter + 1;
+ //    	emailCount.innerHTML = "Messages: " + counter;
+ //    }
+    
     // setInterval(addEmail, 10000);
 
     function addEmail(){
@@ -52,8 +61,12 @@
 
     	for(var j = 0; j < test.length; j++){
   		document.getElementsByClassName("mainBlock")[j].addEventListener("click", showEmail);
-  	}
+		}
 
+		// if()
+
+  		counter = counter + 1;
+    	emailCount.innerHTML = "Messages: " + counter;
 
 	}
 	
@@ -94,12 +107,12 @@
   		messDiv.innerHTML = window.geemails[i].body;
   		divBlock.appendChild(messDiv);
   	}
-  	var test = document.getElementsByClassName("mainBlock");
+  	
 
   	for(var j = 0; j < test.length; j++){
   		document.getElementsByClassName("mainBlock")[j].addEventListener("click", showEmail);
   	}
-	
+
 	console.log(document.getElementsByClassName("mainBlock").length);
 
 	function showEmail(){
