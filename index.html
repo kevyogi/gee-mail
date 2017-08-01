@@ -6,19 +6,34 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
+        // console.log(window.geemails.length);
 
-        var sideWindow = document.createElement("div");
+
+    var sideWindow = document.createElement("div");
         sideWindow.id = "side";
         theBody.appendChild(sideWindow);
 
+    var emailCount = document.createElement("div");
+    	emailCount.id = "theCount";
+    	emailCount.innerHTML = "Messages: " + window.geemails.length;
+    	sideWindow.appendChild(emailCount);
 
-    for(var i = 0; i<10; i++){
+
+    for(var i = 0; i<window.geemails.length; i++){
+    	
+
     	var divBlock = document.createElement("div");
     	divBlock.className = "mainBlock";
     	theBody.appendChild(divBlock);
+    	document.getElementsByClassName("mainBlock")[i].addEventListener("click", showEmail);
 
     	var br = document.createElement("br");
     	theBody.appendChild(br);
+
+    	var dateDiv = document.createElement("div");
+    	dateDiv.className = "theDate";
+    	dateDiv.innerHTML = window.geemails[i].date;
+    	divBlock.appendChild(dateDiv);
 
   		var senderDiv = document.createElement("div");
   		senderDiv.className = "theSender";
@@ -34,13 +49,29 @@
   		messDiv.className = "theMessage";
   		senderDiv.appendChild(messDiv);
   		messDiv.innerHTML = window.geemails[i].body;
+
 }
 
 
       };
+      
+     function showEmail(){
+      	var theEmail = this.querySelectorAll(".theMessage")[0];
+      	if(theEmail.style.display === "none"){
+      		theEmail.style.display = "block";
+      	}else{
+      		theEmail.style.display = "none";
+      	}
+      }
 
 
+ 	var newVar = setInterval(addEmail, 1000);
 
+    var myVar = window.getNewMessage();
+
+    function addEmail(){
+      	window.geemails.unshift(myVar);
+      }
 
 
     </script>
