@@ -8,7 +8,7 @@
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
         // console.log(window.geemails.length);
     var test = document.getElementsByClassName("mainBlock");
-
+    
 
     var sideWindow = document.createElement("div");
         sideWindow.id = "side";
@@ -20,24 +20,20 @@
     	emailCount.innerHTML = "Messages: " + counter;
     	sideWindow.appendChild(emailCount);
 
-	// setInterval(theCounter, 10000);    
-
- //    function theCounter(){
- //    	counter = counter + 1;
- //    	emailCount.innerHTML = "Messages: " + counter;
- //    }
+    var inbox = document.createElement("div");
+    theBody.appendChild(inbox);
     
-    // setInterval(addEmail, 10000);
+    // setInterval(addEmail, 5000);
 
     function addEmail(){
     	var myVar = window.getNewMessage();
 
     	var newDivBlock = document.createElement("div");
     	newDivBlock.className = "mainBlock";
-    	document.body.appendChild(newDivBlock);
+    	inbox.appendChild(newDivBlock);
 
     	var newBreak = document.createElement("br");
-    	document.body.appendChild(newBreak);
+    	inbox.appendChild(newBreak);
 
     	var newDateDive = document.createElement("div");
     	newDateDive.className = "theDate";
@@ -59,11 +55,15 @@
     	newMessDiv.innerHTML = myVar.body;
     	newDivBlock.appendChild(newMessDiv);
 
+    	var newerBreak = document.createElement("br");
+    	// inbox.appendChild(newerBreak);
+
     	for(var j = 0; j < test.length; j++){
   		document.getElementsByClassName("mainBlock")[j].addEventListener("click", showEmail);
 		}
 
-		// if()
+		inbox.insertBefore(newDivBlock, inbox.childNodes[0]);
+		inbox.insertBefore(newerBreak, inbox.childNodes[0]);
 
   		counter = counter + 1;
     	emailCount.innerHTML = "Messages: " + counter;
@@ -75,15 +75,14 @@
 
 
     for(var i = 0; i<window.geemails.length; i++){
-    	
 
     	var divBlock = document.createElement("div");
     	divBlock.className = "mainBlock";
-    	theBody.appendChild(divBlock);
+    	inbox.appendChild(divBlock);
     	// document.getElementsByClassName("mainBlock")[i].addEventListener("click", showEmail);
 
     	var br = document.createElement("br");
-    	theBody.appendChild(br);
+    	inbox.appendChild(br);
 
     	var dateDiv = document.createElement("div");
     	dateDiv.className = "theDate";
