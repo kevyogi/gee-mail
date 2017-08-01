@@ -24,7 +24,8 @@
     theBody.appendChild(inbox);
     
     // setInterval(addEmail, 5000);
-
+    var finalBr = document.createElement("br");
+    inbox.appendChild(finalBr);
     function addEmail(){
     	var myVar = window.getNewMessage();
 
