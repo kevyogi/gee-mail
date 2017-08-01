@@ -15,8 +15,47 @@
 
     var emailCount = document.createElement("div");
     	emailCount.id = "theCount";
-    	emailCount.innerHTML = "Messages: " + window.geemails.length;
+    	emailCount.innerHTML = "Messages: " + document.getElementsByClassName("mainBlock").length;
     	sideWindow.appendChild(emailCount);
+
+    // setInterval(addEmail, 10000);
+
+    function addEmail(){
+    	var myVar = window.getNewMessage();
+
+    	var newDivBlock = document.createElement("div");
+    	newDivBlock.className = "mainBlock";
+    	document.body.appendChild(newDivBlock);
+
+    	var newBreak = document.createElement("br");
+    	document.body.appendChild(newBreak);
+
+    	var newDateDive = document.createElement("div");
+    	newDateDive.className = "theDate";
+    	newDateDive.innerHTML = myVar.date;
+    	newDivBlock.appendChild(newDateDive);
+
+    	var newSenderDiv = document.createElement("div");
+    	newSenderDiv.className = "theSender";
+    	newSenderDiv.innerHTML = myVar.sender;
+    	newDivBlock.appendChild(newSenderDiv);
+
+    	var newSubjectDiv = document.createElement("div");
+    	newSubjectDiv.className = "theSubject";
+    	newSubjectDiv.innerHTML = myVar.subject;
+    	newDivBlock.appendChild(newSubjectDiv);
+
+    	var newMessDiv = document.createElement("div");
+    	newMessDiv.className = "theMessage";
+    	newMessDiv.innerHTML = myVar.body;
+    	newDivBlock.appendChild(newMessDiv);
+
+    	
+
+	}
+	
+	
+
 
 
     for(var i = 0; i<window.geemails.length; i++){
@@ -64,14 +103,48 @@
       	}
       }
 
+console.log(document.getElementsByTagName("div"));
+  
 
- 	var newVar = setInterval(addEmail, 1000);
+    // document.getElementsByClassName("mainBlock").addEventListener("click", showEmail);
 
-    var myVar = window.getNewMessage();
+   // console.log(window.getNewMessage());
+   // console.log(window.getNewMessage());
 
-    function addEmail(){
-      	window.geemails.unshift(myVar);
-      }
+
+ //    function addEmail(){
+ //    	var myVar = window.getNewMessage();
+
+ //    	var newDivBlock = document.createElement("div");
+ //    	newDivBlock.className = "mainBlock";
+ //    	document.body.appendChild(newDivBlock);
+
+ //    	var newDateDive = document.createElement("div");
+ //    	newDateDive.className = "theDate";
+ //    	newDateDive.innerHTML = myVar.date;
+ //    	newDivBlock.appendChild(newDateDive);
+
+ //    	var newSenderDiv = document.createElement("div");
+ //    	newSenderDiv.className = "theSender";
+ //    	newSenderDiv.innerHTML = myVar.sender;
+ //    	newDivBlock.appendChild(newSenderDiv);
+
+ //    	var newSubjectDiv = document.createElement("div");
+ //    	newSubjectDiv.className = "theSubject";
+ //    	newSubjectDiv.innerHTML = myVar.subject;
+ //    	newDivBlock.appendChild(newSubjectDiv);
+
+ //    	var newMessDiv = document.createElement("div");
+ //    	newMessDiv.className = "theMessage";
+ //    	newMessDiv.innerHTML = myVar.body;
+ //    	newDivBlock.appendChild(newMessDiv);
+
+    	
+
+	// }
+
+	// console.log(addEmail());
+	// addEmail();
 
 
     </script>
