@@ -1,5 +1,5 @@
 #theBody{
-	background-color: #d0e1e1;
+	background-color: #0085C0;
 }
 #bigG{
 	height: 150px;
@@ -13,15 +13,20 @@
 #theHead{
 	text-align: center;
 	font-family: 'Walter Turncoat', cursive;
-	font-size: 65px;
-	margin-bottom: 25px;
+	font-size: 85px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	border: 5px solid #E7F3F7;
+	border-radius: 15px;
+	margin-left: 291px;
+	margin-right: 300px;
 
 }
 #theHead:hover{
-	background-image: url(https://media.giphy.com/media/xT39Dnk4ZATDUfgLiU/giphy.gif);
+	background-image: url(https://media.giphy.com/media/l41YePgsv92CTdTVe/giphy.gif);
 	background-repeat: no-repeat;
 	background-position: center;
-	opacity: 0.5;
+	border: 5px solid #FAB857;
 }
 
 #side{
@@ -51,13 +56,13 @@
 	padding-bottom: 10px;
 	padding-right: 5px;
 	padding-left: 5px;
-	background-color: #53c68c;
+	background-color: #E7F3F7;
 	border-radius: 10px;
 	 
 
 }
 .mainBlock:hover{
-	background-color: #009BDE;
+	background-color: #FAB857;
 	color: white;
 }
 
