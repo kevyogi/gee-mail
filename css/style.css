@@ -6,10 +6,7 @@
 	margin-bottom: -150px;
 	margin-left: 40px;
 }
-/*#bigG:hover{
-	background-image: url(https://media.giphy.com/media/N0xJvDY8xmqYM/giphy.gif);
-	display: block;
-}*/
+
 #theHead{
 	text-align: center;
 	font-family: 'Walter Turncoat', cursive;
@@ -20,6 +17,7 @@
 	border-radius: 15px;
 	margin-left: 291px;
 	margin-right: 300px;
+	background-color: 	#009BDE;
 
 }
 #theHead:hover{
@@ -27,8 +25,14 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	border: 5px solid #FAB857;
-}
 
+}
+#theHead:after{
+	content: "Gee Mail";
+}
+#theHead:hover:after{
+	content: "Gee Whiz!";
+}
 #side{
 	margin-right: 1075px;
 	margin-left: 15px;
