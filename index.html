@@ -6,6 +6,12 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
+
+    var logo = document.createElement("img");
+    logo.id = "bigG";
+    theBody.appendChild(logo);
+    document.getElementById("bigG").src = "http://www.gisforglasses.com/wp-content/themes/gisforglasses/assets/images/gisforglasseslogo-normal.svg";
+
     var header = document.createElement("h1");
     header.id = "theHead";
     header.innerHTML = "Gee Mail";
