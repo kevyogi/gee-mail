@@ -7,48 +7,55 @@
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 
-    var logo = document.createElement("img");
+
+
+    //Code to create img element for logo
+	var logo = document.createElement("img");
     logo.id = "bigG";
     theBody.appendChild(logo);
     document.getElementById("bigG").src = "https://lh4.ggpht.com/IZPLW1SW3yZTnLeOl4nMqDy7BzB3hSwzusLGE648ydbHJeWU4n8FKGCdsJcIqsoafA=w300";
+    //
 
 
+    //Code to create header
     var header = document.createElement("h1");
     header.id = "theHead";
     theBody.appendChild(header);
+    //
 
     var test = document.getElementsByClassName("mainBlock");
     
-
+    
+    //Code to create side menu/initial email count
     var sideWindow = document.createElement("div");
         sideWindow.id = "side";
         theBody.appendChild(sideWindow);
-        
-
-        var emailCount = document.createElement("li");
+	
+	var emailCount = document.createElement("li");
     	emailCount.id = "theCount";
-    	var counter = window.geemails.length;
+    	
+    var counter = window.geemails.length;
     	emailCount.innerHTML = "Inbox " + "(" + counter + ")";
     	sideWindow.appendChild(emailCount);
-        
-        var menuItems = ["Starred", "Important", "Sent Mail", "Drafts", "Spam"];
-        for(var y = 0; y < menuItems.length; y++){
-        	var theList = document.createElement("li");
+    
+    var menuItems = ["Starred", "Important", "Sent Mail", "Drafts", "Spam"];
+    for(var y = 0; y < menuItems.length; y++){
+        var theList = document.createElement("li");
         	theList.className = "list";
         	theList.innerHTML = menuItems[y] + " (0)";
         	sideWindow.appendChild(theList);
-        }
+    	}
+    //        
 
-
-
-
-    
-
-    var inbox = document.createElement("div");
+    //Code to create inbox div element
+	var inbox = document.createElement("div");
     inbox.id = "theInbox";
     theBody.appendChild(inbox);
+    //
     
-    // setInterval(addEmail, 5000);
+
+    //Code for setInterval, newMessage/newCounter function to create new messages
+    setInterval(addEmail, 10000);
     var finalBr = document.createElement("br");
     inbox.appendChild(finalBr);
     
@@ -84,22 +91,26 @@
 
     	var newerBreak = document.createElement("br");
 
+
+    	//create eventListener
     	for(var j = 0; j < test.length; j++){
   		document.getElementsByClassName("mainBlock")[j].addEventListener("click", showEmail);
 		}
 
+		//new emails appear at top
 		inbox.insertBefore(newDivBlock, inbox.childNodes[0]);
 		inbox.insertBefore(newerBreak, inbox.childNodes[0]);
 
+		//new counter
   		counter = counter + 1;
     	emailCount.innerHTML = "Inbox " + "(" + counter + ")";
 
 	}
+	//end of setInterval/newMessage/counter code
 	
-	
 
 
-
+	//Code to create initial inbox messages from geemails array
     for(var i = 0; i<window.geemails.length; i++){
 
     	var divBlock = document.createElement("div");
@@ -132,14 +143,20 @@
   		messDiv.innerHTML = window.geemails[i].body;
   		divBlock.appendChild(messDiv);
   	}
-  	
+  	//
 
+
+  	//Code to create eventListener
   	for(var j = 0; j < test.length; j++){
   		document.getElementsByClassName("mainBlock")[j].addEventListener("click", showEmail);
   	}
+  	//
 
-	console.log(document.getElementsByClassName("mainBlock").length);
 
+	// console.log(document.getElementsByClassName("mainBlock").length);
+
+
+	//Code to toggle message display
 	function showEmail(){
       	var theEmail = this.querySelectorAll(".theMessage")[0];
       	if(theEmail.style.display === "none"){

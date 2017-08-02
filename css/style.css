@@ -32,6 +32,7 @@
 }
 #theHead:hover:after{
 	content: "Gee Whiz!";
+	opacity: 0.3;
 }
 #side{
 	margin-right: 1075px;
