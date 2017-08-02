@@ -1,17 +1,28 @@
+#theBody{
+	background-color: #d0e1e1;
+}
+
 #theHead{
 	text-align: center;
+	font-family: 'Walter Turncoat', cursive;
+	font-size: 65px;
+	margin-bottom: 25px;
 }
 
 #side{
-	margin-right: 1136px;
+	margin-right: 1075px;
 	margin-left: 15px;
+	font-family: 'Walter Turncoat', cursive;
+	font-size: 20px;
 
 
 }
 
 #theInbox{
-	margin-left: 175px;
-	margin-top: -125px;
+	margin-left: 235px;
+	margin-top: -180px;
+	margin-right: 115px;
+	font-family: 'Delius', cursive;
 }
 
 #theCount{
@@ -19,11 +30,13 @@
 }
 
 .mainBlock{
-	border: 2px solid black;
+	border: 2px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	padding-right: 5px;
 	padding-left: 5px;
+	background-color: #53c68c;
+	border-radius: 10px;
 	 
 
 }
@@ -36,11 +49,13 @@
 
 .theSender{
 	float: left;
+	font-size: 20px;
 
 }
 
 .theSubject{
 	text-align: center;
+	padding-bottom: 15px;
 
 }
 
