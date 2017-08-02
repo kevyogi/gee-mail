@@ -6,11 +6,22 @@
 	margin-bottom: -150px;
 	margin-left: 40px;
 }
+/*#bigG:hover{
+	background-image: url(https://media.giphy.com/media/N0xJvDY8xmqYM/giphy.gif);
+	display: block;
+}*/
 #theHead{
 	text-align: center;
 	font-family: 'Walter Turncoat', cursive;
 	font-size: 65px;
 	margin-bottom: 25px;
+
+}
+#theHead:hover{
+	background-image: url(https://media.giphy.com/media/xT39Dnk4ZATDUfgLiU/giphy.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: 0.5;
 }
 
 #side{
@@ -46,7 +57,7 @@
 
 }
 .mainBlock:hover{
-	background-color: #F26522;
+	background-color: #009BDE;
 	color: white;
 }
 
