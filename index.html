@@ -33,6 +33,17 @@
 	
 	var emailCount = document.createElement("li");
     	emailCount.id = "theCount";
+    	emailCount.addEventListener("click", switchBack);
+
+    function switchBack(){
+    	if(otherBox.style.display === "block"){
+    		otherBox.style.display = "none";
+    		inbox.style.display = "block";
+    	}else{
+    		otherBox.style.display = "none";
+    		inbox.style.display = "block";
+    	}
+    }
     	
     var counter = window.geemails.length;
     	emailCount.innerHTML = "Inbox " + "(" + counter + ")";
@@ -44,14 +55,32 @@
         	theList.className = "list";
         	theList.innerHTML = menuItems[y] + " (0)";
         	sideWindow.appendChild(theList);
+        document.getElementsByClassName("list")[y].addEventListener("click", switchBox);
     	}
-    //        
+    //
+
+    //Code to create dummy box for other folders
+    function switchBox(){
+    	if(inbox.style.display === "block"){
+    		inbox.style.display = "none";
+    		otherBox.style.display = "block";
+    	}else{
+    		inbox.style.display = "none";
+    		otherBox.style.display = "block";
+    	}
+    }
+    //
 
     //Code to create inbox div element
 	var inbox = document.createElement("div");
     inbox.id = "theInbox";
     theBody.appendChild(inbox);
     //
+
+    var otherBox = document.createElement("div");
+    otherBox.id = "oBox";
+    otherBox.innerHTML = "No Messages";
+    theBody.appendChild(otherBox);
     
 
     //Code for setInterval, newMessage/newCounter function to create new messages

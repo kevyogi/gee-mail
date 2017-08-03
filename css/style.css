@@ -49,6 +49,22 @@
 	margin-right: 115px;
 	font-family: 'Delius', cursive;
 }
+#oBox{
+	display: none;
+	border: 2px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-color: #E7F3F7;
+	border-radius: 10px;
+	margin-left: 235px;
+	margin-top: -180px;
+	margin-right: 115px;
+	font-family: 'Delius', cursive;
+	text-align: center;
+
+}
 
 #theCount{
 
