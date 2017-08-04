@@ -16,7 +16,7 @@
 	margin-top: 20px;
 	border: 5px solid #E7F3F7;
 	border-radius: 15px;
-	margin-left: 291px;
+	margin-left: 365px;
 	margin-right: 300px;
 	background-color: 	#009BDE;
 }
@@ -40,9 +40,16 @@
 	font-family: 'Walter Turncoat', cursive;
 	font-size: 20px;
 	padding-top: 25px;
-
-
 }
+
+#theCount:hover{
+	color: #FAB857;
+}
+
+.list:hover{
+	color: #FAB857;
+}
+
 #theInbox{
 	margin-left: 235px;
 	margin-top: -180px;
@@ -63,12 +70,13 @@
 	margin-right: 115px;
 	font-family: 'Delius', cursive;
 	text-align: center;
-
 }
+/*#theCloud{
+	display: none;
+	padding-left: 400px;
+	margin-top: -90px;
+}*/
 
-#theCount{
-
-}
 
 .mainBlock{
 	border: 2px;

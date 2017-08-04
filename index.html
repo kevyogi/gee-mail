@@ -42,6 +42,7 @@
     	}else{
     		otherBox.style.display = "none";
     		inbox.style.display = "block";
+    		
     	}
     }
     	
@@ -59,7 +60,7 @@
     	}
     //
 
-    //Code to create dummy box for other folders
+    //Code for eventListener function
     function switchBox(){
     	if(inbox.style.display === "block"){
     		inbox.style.display = "none";
@@ -77,6 +78,7 @@
     theBody.appendChild(inbox);
     //
 
+    //code for dummy boxes
     var otherBox = document.createElement("div");
     otherBox.id = "oBox";
     otherBox.innerHTML = "No Messages";
@@ -84,7 +86,7 @@
     
 
     //Code for setInterval, newMessage/newCounter function to create new messages
-    // setInterval(addEmail, 10000);
+    setInterval(addEmail, 10000);
     var finalBr = document.createElement("br");
     inbox.appendChild(finalBr);
     
